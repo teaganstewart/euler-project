@@ -5,15 +5,17 @@ function fiboEvenSum(n) {
     let two = 2;
 
     let sum = 2;
+    let three = one + two;
 
-    while (one + two <= n) {
-        let three = one + two;
+    while (three <= n) {
+        
         if (three % 2 == 0) {
             sum += three;
         }
 
         one = two;
         two = three;
+        three = one + two;
     }
 
     return sum;
@@ -26,14 +28,14 @@ function fiboEvenSum(n) {
  * This was actually slower.
  */
 function fasterFibonacci(n) {
-    let curr = goldenRatioCalculator(3);
+    let curr = 2;
     let i = 3;
     let sum = 0;
 
     while (curr <= n) {
         sum += curr;
         i += 3;
-        curr = goldenRatioCalculator(i);
+        curr = (power(phi, i) - power(phi1, i)) / sqrt5 | 0;
     }
 
     return sum;
@@ -45,15 +47,11 @@ let sqrt5 = 2.2360679775;
 
 function power(a, b) {
     let res = 1;
-    for(let i = 0; i < b; i++) {
+    for(let i = 0; i < b; ++i) {
         res *= a;
     }
 
     return res;
-}
-
-function goldenRatioCalculator(n) {
-    return (power(phi, n) - power(phi1, n)) / sqrt5 | 0;
 }
 
 /**
@@ -62,46 +60,59 @@ function goldenRatioCalculator(n) {
  * The fastest approach so far.
  */
 function arraySumFibonacci(n) {
-    let arr = [2, 1, 2]; 
-    for(let i = 3; i < n; i++) {
+    let arr = [0, 1, 2]; let i = 2;
+    while(arr[i] < n) {
+        
+        if(arr[i] % 2 === 0) arr[0] += arr[i];
+        i++;
         arr[i] = arr[i-1] + arr[i-2];
-        if(arr[i] > n) {
-            break;
-        }
-        if(arr[i] % 2 === 0) {
-            arr[0] += arr[i];
-        }
+        
     }
-
 
     return arr[0];
 }
 
-var start = new Date().getTime();
+function average(nums) {
+    return nums.reduce((a, b) => (a + b)) / nums.length;
+}
 
-console.log("\nResult of golden ratio method for 10: " + fasterFibonacci(4000000));
+let times = [];
+for(let i = 0; i < 1000000; ++i) {
+    var start = new Date().getTime();
 
-var end = new Date().getTime();
-var time = end - start;
+    fasterFibonacci(4000000);
 
-console.log("Took " + time + " milliseconds\n");
+    var end = new Date().getTime();
+    var time = end - start;
+    times.push(time);
 
-var start = new Date().getTime();
+}
 
-console.log("Result of for loop method for 10: " + fiboEvenSum(4000000));
+console.log("\nGolden Ratio: Took " + average(times) + " milliseconds. Average of 1,000,000 runs.");
 
-var end = new Date().getTime();
-var time = end - start;
 
-console.log("Took " + time + " milliseconds \n");
+times = [];
+for(let i = 0; i < 1000000; ++i) {
+    var start = new Date().getTime();
 
-var start = new Date().getTime();
+    fiboEvenSum(4000000);
 
-console.log("Result of array method for 10: " + arraySumFibonacci(4000000));
+    var end = new Date().getTime();
+    var time = end - start;
+    times.push(time);
+}
 
-var end = new Date().getTime();
-var time = end - start;
+console.log("For Loop: Took " + average(times) + " milliseconds. Average of 1,000,000 runs. Result equals " + fiboEvenSum(4000000));
 
-console.log("Took " + time + " milliseconds\n");
+times = [];
+for(let i = 0; i < 1000000; ++i) {
+    var start = new Date().getTime();
+    arraySumFibonacci(4000000);
+    var end = new Date().getTime();
+    var time = end - start;
+    times.push(time);
+}
+
+console.log("Array: Took " + average(times) + " milliseconds. Average of 1,000,000 runs. Result equals " + arraySumFibonacci(4000000) + "\n");
 
 
