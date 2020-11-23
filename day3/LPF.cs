@@ -5,7 +5,46 @@ using System.Diagnostics;
 
 namespace EulerProject
 {
-    class Program {
+    class Program
+    {
+
+        List<int> factors;
+
+        int RecursiveLPF(long number) {
+            factors = new List<int>();
+
+            RecursiveHelper(number);
+            
+            return factors.Max();
+        }
+
+        void RecursiveHelper(long number) {
+            if(number == 1) {
+                return;
+            }
+
+            if(number % 2 == 0) {
+                factors.Add(2);
+                RecursiveHelper(number/2);
+                return;
+            }
+            
+            if(CheckIfPrime(number)) {
+                factors.Add((int) number);
+                RecursiveHelper(1);
+                return;
+            }
+
+            for(int i = 3; i <= number; i = i + 2) {
+                if(number % i == 0) {
+                    if(CheckIfPrime(i)) {
+                        factors.Add(i);
+                        RecursiveHelper(number/i);
+                        break;
+                    }
+                }
+            } 
+        }
 
         bool CheckIfPrime(long number)
         {
@@ -63,19 +102,26 @@ namespace EulerProject
         }
         static void Main(string[] args)
         {
-            long[] times = new long[1000];
-            for(int i = 0; i < 1000; i++) {
-                Stopwatch stopWatch = new Stopwatch();
-                stopWatch.Start();
-                new Program().LargestPrimeFactor(21313123121);
-                stopWatch.Stop();
-                times[i] = stopWatch.ElapsedMilliseconds;
+            //long[] times = new long[1000];
+            //for(int i = 0; i < 1000; i++) {
+                // Stopwatch stopWatch = new Stopwatch();
+                // stopWatch.Start();
+                // new Program().LargestPrimeFactor(21313123121);
+                // stopWatch.Stop();
+                //times[i] = stopWatch.ElapsedMilliseconds;
                 
-            }    
+            //}    
 
-            Console.WriteLine("" + average(times));
+            //Console.WriteLine("" + average(times));
 
+            Program p = new Program();
+            Stopwatch stopWatch = new Stopwatch();
+            
+            stopWatch.Start();
+            Console.WriteLine(p.RecursiveLPF(21313123121));
+            stopWatch.Stop();
 
+            Console.WriteLine(stopWatch.ElapsedMilliseconds + " milliseconds.");
 
         }
     }
