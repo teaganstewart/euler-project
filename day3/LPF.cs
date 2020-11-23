@@ -10,7 +10,59 @@ namespace EulerProject
     class Program
     {
 
+        // Stores the prime factors of the recursive method's number.
         List<int> factors;
+
+        // --------------------------------------
+        //          ITERATIVE VERSION 
+        // --------------------------------------
+
+        // Base method for the iterative LPF algorithm. 
+        /// <param name="number"> The number we are find the LPF of. </param>
+        /// <returns> The largest prime factor of number. </param>
+        long IterativeLPF(long number)
+        {
+            long max = 0;
+
+            while (number != 1)
+            {
+                if (number % 2 == 0)
+                {
+                    number = number / 2;
+                    if (2 > max) max = 2;
+                    continue;
+                }
+
+                // Checks if the current number is prime. If it is it will skip the next long loop.
+                if (CheckIfPrime(number))
+                {
+                    if (number > max) max = number;
+                    number = 1;
+                    continue;
+                }
+
+                // Loops through remaining numbers to check for factors.
+                for (int i = 3; i < number; i = i + 2)
+                {
+                    if (number % i == 0)
+                    {
+                        if (CheckIfPrime(i))
+                        {
+                            max = i;
+                            number = number / i;
+                            break;
+                        }
+                    }
+                }
+
+            }
+
+            return max;
+        }
+
+        // --------------------------------------
+        //          RECURSIVE VERSION 
+        // --------------------------------------
 
         // Base method for the recursive LPF algorithm. 
         /// <param name="number"> The number we are find the LPF of. </param>
@@ -66,21 +118,6 @@ namespace EulerProject
             }
         }
 
-        // Checks if a number is prime. Helper method for the LPF algorithm.
-        /// <param name="number"> The number we are find the LPF of. </param>
-        bool CheckIfPrime(long number)
-        {
-            for (long i = 3; i < number; i = i + 2)
-            {
-                if (number % i == 0)
-                {
-                    return false;
-                }
-            }
-            return true;
-        }
-
-
         // long LargestPrimeFactor(long number)
         // {
         //     if (number % 2 == 0)
@@ -128,6 +165,25 @@ namespace EulerProject
             return average / 1000.0;
 
         }
+
+        // --------------------------------------
+        //          HELPERS METHODS  
+        // --------------------------------------
+
+        // Checks if a number is prime. Helper method for the LPF algorithm.
+        /// <param name="number"> The number we are find the LPF of. </param>
+        bool CheckIfPrime(long number)
+        {
+            for (long i = 3; i < number; i = i + 2)
+            {
+                if (number % i == 0)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
         static void Main(string[] args)
         {
             //long[] times = new long[1000];
@@ -146,10 +202,14 @@ namespace EulerProject
             Stopwatch stopWatch = new Stopwatch();
 
             stopWatch.Start();
+            Console.WriteLine(p.IterativeLPF(21313123121));
+            stopWatch.Stop();
+            Console.WriteLine("Iterative Method: Took " + stopWatch.ElapsedMilliseconds + " milliseconds.");
+
+            stopWatch.Start();
             Console.WriteLine(p.RecursiveLPF(21313123121));
             stopWatch.Stop();
-
-            Console.WriteLine(stopWatch.ElapsedMilliseconds + " milliseconds.");
+            Console.WriteLine("Recursive Method: Took " + stopWatch.ElapsedMilliseconds + " milliseconds.");
 
         }
     }
