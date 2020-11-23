@@ -1,0 +1,16 @@
+C:\Users\Teagan\Desktop\EulerProject\day4\bin\Debug\net5.0\Palindromes.exe
+C:\Users\Teagan\Desktop\EulerProject\day4\bin\Debug\net5.0\Palindromes.deps.json
+C:\Users\Teagan\Desktop\EulerProject\day4\bin\Debug\net5.0\Palindromes.runtimeconfig.json
+C:\Users\Teagan\Desktop\EulerProject\day4\bin\Debug\net5.0\Palindromes.runtimeconfig.dev.json
+C:\Users\Teagan\Desktop\EulerProject\day4\bin\Debug\net5.0\Palindromes.dll
+C:\Users\Teagan\Desktop\EulerProject\day4\bin\Debug\net5.0\ref\Palindromes.dll
+C:\Users\Teagan\Desktop\EulerProject\day4\bin\Debug\net5.0\Palindromes.pdb
+C:\Users\Teagan\Desktop\EulerProject\day4\obj\Debug\net5.0\Palindromes.csprojAssemblyReference.cache
+C:\Users\Teagan\Desktop\EulerProject\day4\obj\Debug\net5.0\Palindromes.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Teagan\Desktop\EulerProject\day4\obj\Debug\net5.0\Palindromes.AssemblyInfoInputs.cache
+C:\Users\Teagan\Desktop\EulerProject\day4\obj\Debug\net5.0\Palindromes.AssemblyInfo.cs
+C:\Users\Teagan\Desktop\EulerProject\day4\obj\Debug\net5.0\Palindromes.csproj.CoreCompileInputs.cache
+C:\Users\Teagan\Desktop\EulerProject\day4\obj\Debug\net5.0\Palindromes.dll
+C:\Users\Teagan\Desktop\EulerProject\day4\obj\Debug\net5.0\ref\Palindromes.dll
+C:\Users\Teagan\Desktop\EulerProject\day4\obj\Debug\net5.0\Palindromes.pdb
+C:\Users\Teagan\Desktop\EulerProject\day4\obj\Debug\net5.0\Palindromes.genruntimeconfig.cache
