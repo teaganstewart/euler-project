@@ -1,4 +1,4 @@
-<b> #Euler-Project - Learning to Optimize Code! <b>
+<h2> #Euler-Project - Learning to Optimize Code! </h2> <br> <br> 
 This is part of the 100 Day Euler Project as part of the freeCodeCamp. I will be using this to learn new langauges like C#, and to strengthen ones I know like JavaScript, C and C++. Another goal of the project is to learn to optimise code and know the ideal data structures for certain situations. 
 <br>
 Code can be run through visual studio code using dotnet test (if it is C# code) <br>
