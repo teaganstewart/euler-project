@@ -1,0 +1,16 @@
+C:\Users\Teagan\Desktop\EulerProject\day3\bin\Debug\net5.0\LPF.exe
+C:\Users\Teagan\Desktop\EulerProject\day3\bin\Debug\net5.0\LPF.deps.json
+C:\Users\Teagan\Desktop\EulerProject\day3\bin\Debug\net5.0\LPF.runtimeconfig.json
+C:\Users\Teagan\Desktop\EulerProject\day3\bin\Debug\net5.0\LPF.runtimeconfig.dev.json
+C:\Users\Teagan\Desktop\EulerProject\day3\bin\Debug\net5.0\LPF.dll
+C:\Users\Teagan\Desktop\EulerProject\day3\bin\Debug\net5.0\ref\LPF.dll
+C:\Users\Teagan\Desktop\EulerProject\day3\bin\Debug\net5.0\LPF.pdb
+C:\Users\Teagan\Desktop\EulerProject\day3\obj\Debug\net5.0\LPF.csprojAssemblyReference.cache
+C:\Users\Teagan\Desktop\EulerProject\day3\obj\Debug\net5.0\LPF.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Teagan\Desktop\EulerProject\day3\obj\Debug\net5.0\LPF.AssemblyInfoInputs.cache
+C:\Users\Teagan\Desktop\EulerProject\day3\obj\Debug\net5.0\LPF.AssemblyInfo.cs
+C:\Users\Teagan\Desktop\EulerProject\day3\obj\Debug\net5.0\LPF.csproj.CoreCompileInputs.cache
+C:\Users\Teagan\Desktop\EulerProject\day3\obj\Debug\net5.0\LPF.dll
+C:\Users\Teagan\Desktop\EulerProject\day3\obj\Debug\net5.0\ref\LPF.dll
+C:\Users\Teagan\Desktop\EulerProject\day3\obj\Debug\net5.0\LPF.pdb
+C:\Users\Teagan\Desktop\EulerProject\day3\obj\Debug\net5.0\LPF.genruntimeconfig.cache
