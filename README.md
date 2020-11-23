@@ -7,7 +7,7 @@ if it is JavaScript then it can be run using Node.js in the command line using n
 Project require either Node.js or .NET to be installed, depending on whether the code is in JavaScript or C#. C/C++ programs can be compiled using a gcc/g++ compiler on the commandline. <br> <br>
 
 <b> All in the Command Line </b> <br> 
-For all first navigate to the location of the program file (C#) or source code (C/C++/JavaScript). While at the location run: <br> <br>
+For all first navigate to the location of the program file (C#) or source code (C/C++/JavaScript). While at the location run: <br>
 
 JavaScript: $ node file-name.js <br>
 C#: $ dotnet run <br>
